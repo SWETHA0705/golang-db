@@ -23,10 +23,11 @@ func main() {
 	//	models.Product{ID: primitive.NewObjectID(), Name: "oneplus", Price: 100000, Description: "budget phone"},
 	//	models.Product{ID: primitive.NewObjectID(), Name: "vivo", Price: 10000, Description: "china phone"}}
 	//services.InsertProductList(products)
-	res, _ := services.Findres()
-	fmt.Println(res)
-	for _, r := range res {
-		fmt.Println(r)
-	}
-
+	
+	// services.FetchAggregatedTransactions() // we are calling our function of find query
+	
+	//for _, r := range res {
+	//	fmt.Println(r)
+	//}
+ services.UpdateTransaction(637483,633333)
 }

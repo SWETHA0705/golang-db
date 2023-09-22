@@ -45,15 +45,18 @@ func Findres() ([]*models.Restaurant, error) {
 		fmt.Println(err)
 		return nil, err
 	} else {
-		//   fmt.Println(result)
+		// storing our results in array
 		var products []*models.Restaurant
+		// using next it will check and iterate until it finds empty
 		for result.Next(cxt) {
+			// storing each output in product
 			product := &models.Restaurant{}
 			err := result.Decode(product)
 			if err != nil {
 				return nil, err
 
 			}
+			// using append we are adding product to our array products
 			products = append(products, product)
 
 		}
@@ -64,6 +67,7 @@ func Findres() ([]*models.Restaurant, error) {
 
 			return []*models.Restaurant{}, nil
 		}
+		// we are returning our array products
 
 		return products, nil
 
